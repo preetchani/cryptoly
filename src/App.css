@@ -34,6 +34,9 @@ a:hover{
 }
 .routes{
     padding: 20px;
+    color: black;
+    display:flex;
+    justify-content: center;
 }
 .nav-container{
     position: fixed;

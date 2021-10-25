@@ -3,11 +3,13 @@ import { Typography, Row, Col, Statistic } from 'antd';
 import millify from 'millify';
 import { useGetCryptoDataQuery } from '../Services/cryptoApi';
 import { Link } from 'react-router-dom';
+import Cryptocurrencies from './Cryptocurrencies';
+import News from './News';
 
 
 
 const HomePage = () => {
-    const {data,isFetching}=useGetCryptoDataQuery();
+    const {data,isFetching}=useGetCryptoDataQuery(10);
 
     /* ?. is same like changin directory in Linux but here we are using it to react to correct object */
     const globalStats = data?.data?.stats;
@@ -30,8 +32,15 @@ const HomePage = () => {
        </Row>
        <div className="home-heading-container">
            <Typography.Title level={2} className="home-title">Top 10 Cryptocurries in the world</Typography.Title>
-           <Typography.Title level={2} className="show-more"><Link to="/cryptocurrencies">Show More</Link></Typography.Title>
+           <Typography.Title level={3} className="show-more"><Link to="/crytocurrencies">Show More</Link></Typography.Title>
+
        </div>
+       <Cryptocurrencies limited/>
+       <div className="home-heading-container">
+           <Typography.Title level={2} className="home-title">Latest Crypto News </Typography.Title>
+           <Typography.Title level={3} className="show-more"><Link to="/news">Show More</Link></Typography.Title>
+       </div>
+        <News limited/>
        </>
     )
 }

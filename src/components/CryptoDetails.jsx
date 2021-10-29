@@ -15,11 +15,13 @@ import {
 } from "@ant-design/icons";
 import { useGetCryptoDetailsQuery } from "../Services/cryptoApi";
 import { useParams } from "react-router";
-
+import CharComponent from "./CharComponent";
+import { useGetCryptoHistoryQuery } from "../Services/cryptoApi";
 const CryptoDetails = () => {
   const { coinId } = useParams();
   const [timePeriod, setTimePeriod] = useState("7d");
   const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
+  const {data:coinHistory} = useGetCryptoHistoryQuery({coinId,timePeriod});
   const cryptoDetails = data?.data?.coin;
   console.log(data);
 
@@ -103,6 +105,11 @@ const CryptoDetails = () => {
           <Select.Option key={day}>{day}</Select.Option>
         ))}
       </Select>
+      <CharComponent
+        coinHistory={coinHistory}
+        currentPrice={millify(cryptoDetails.price)}
+        coinName={cryptoDetails.name}
+      />
       <Col className="stats-container">
         <Col className="coin-value-statistics">
           <Col className="coin-value-statistics-heading">

@@ -2,7 +2,7 @@ import React from 'react';
 import {Line} from 'react-chartjs-2';
 import {Col,Row,Typography} from 'antd'
 
-const CharComponent = ({coinHistory, currentPrice, coinName}) => {
+const ChartComponent = ({coinHistory, currentPrice, coinName}) => {
     const coinPrice = [];
     const coinTimestamp = [];
   
@@ -52,4 +52,4 @@ const CharComponent = ({coinHistory, currentPrice, coinName}) => {
     )
 }
 
-export default CharComponent;
+export default ChartComponent;

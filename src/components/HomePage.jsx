@@ -4,6 +4,7 @@ import millify from "millify";
 import { useGetCryptoDataQuery } from "../Services/cryptoApi";
 import { Link } from "react-router-dom";
 import Cryptocurrencies from "./Cryptocurrencies";
+import Spinner from "./Spinner";
 import News from "./News";
 
 const HomePage = () => {
@@ -12,7 +13,7 @@ const HomePage = () => {
   /* ?. is same like changin directory in Linux but here we are using it to react to correct object */
   const globalStats = data?.data?.stats;
 
-  if (isFetching) return "Loading...";
+  if (isFetching) return <Spinner/>;
 
   console.log(data);
   return (

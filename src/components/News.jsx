@@ -3,6 +3,7 @@ import { useGetCryptoNewsDataQuery } from "../Services/cryptoNews";
 import { useGetCryptoDataQuery } from "../Services/cryptoApi";
 import moment from "moment";
 import { Row, Col, Select, Typography, Card, Avatar } from "antd";
+import Spinner from "./Spinner";
 
 const fallbackImg =
   "https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News";
@@ -14,7 +15,7 @@ const News = ({ limited }) => {
     count: limited ? 6 : 12,
   });
   console.log(cryptoNews);
-  if (!cryptoNews?.value) return "Loading...";
+  if (!cryptoNews?.value) return <Spinner/>;
   return (
     <Row gutter={[24, 24]}>
       {!limited && (

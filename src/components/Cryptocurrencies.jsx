@@ -3,6 +3,7 @@ import millify from 'millify';
 import { useGetCryptoDataQuery } from '../Services/cryptoApi';
 import { Link } from 'react-router-dom';
 import { Card,Row,Col,Input } from 'antd';
+import Spinner from './Spinner';
 
 
 
@@ -18,7 +19,7 @@ const Cryptocurrencies = ({limited}) => {
     },[crytoList,searchTerm]);
 
     console.log(cryptos);   
-    if(isFetching) return "Loading..."
+    if(isFetching) return <Spinner/>
     return (
       <>
         {!limited && (

@@ -15,8 +15,9 @@ import {
 } from "@ant-design/icons";
 import { useGetCryptoDetailsQuery } from "../Services/cryptoApi";
 import { useParams } from "react-router";
-import CharComponent from "./CharComponent";
+import CharComponent from "./ChartComponent";
 import { useGetCryptoHistoryQuery } from "../Services/cryptoApi";
+import Spinner from "./Spinner";
 const CryptoDetails = () => {
   const { coinId } = useParams();
   const [timePeriod, setTimePeriod] = useState("7d");
@@ -25,7 +26,7 @@ const CryptoDetails = () => {
   const cryptoDetails = data?.data?.coin;
   console.log(data);
 
-  if (isFetching) return "Loading...";
+  if (isFetching) return <Spinner/>;
 
   const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
 

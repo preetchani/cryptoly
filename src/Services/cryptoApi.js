@@ -23,8 +23,11 @@ export const cryptoApi = createApi({
         getCryptoHistory:builder.query({
             query:({coinId,timePeriod})=> createRequest(`/coin/${coinId}/history/${timePeriod}`)
         }),
+        getExchanges: builder.query({
+            query: () => createRequest('/exchanges'),
+          }),
     })
 });
 
 /* use redux hook to call fetch cryto data*/
-export const {useGetCryptoDataQuery,useGetCryptoDetailsQuery,useGetCryptoHistoryQuery} = cryptoApi;
+export const {useGetCryptoDataQuery,useGetCryptoDetailsQuery,useGetCryptoHistoryQuery,useGetExchangesQuery} = cryptoApi;

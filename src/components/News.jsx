@@ -31,12 +31,14 @@ const News = ({ limited }) => {
             }
           >
             <Select.Option value="Cryptocurrency">Cryptocurrency</Select.Option>
+            {/**Map over the crypto APi data and display type of currencies in dropdown menu */}
             {data?.data?.coins.map((coin) => (
               <Select.Option value={coin.name}>{coin.name}</Select.Option>
             ))}
           </Select>
         </Col>
       )}
+      {/* Map over the crypto news api and display news data on ant design card */}
       {cryptoNews.value.map((news, i) => (
         <Col xs={24} sm={12} lg={8} key={i}>
           <Card className="news-card" hoverable>
@@ -52,10 +54,12 @@ const News = ({ limited }) => {
                 />
               </div>
               <p>
+                {/* if news description is greater than 100 char display ... after 100th character */}
                 {news.description > 100
                   ? `${news.description.subString(0, 100)}...`
                   : news.description}
               </p>
+              {/* footer part of  news card */}
               <div className="provider-container">
                 <div>
                   <Avatar

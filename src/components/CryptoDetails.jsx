@@ -18,7 +18,10 @@ import { useParams } from "react-router";
 import CharComponent from "./ChartComponent";
 import { useGetCryptoHistoryQuery } from "../Services/cryptoApi";
 import Spinner from "./Spinner";
+
+
 const CryptoDetails = () => {
+  
   const { coinId } = useParams();
   const [timePeriod, setTimePeriod] = useState("7d");
   const { data, isFetching } = useGetCryptoDetailsQuery(coinId);

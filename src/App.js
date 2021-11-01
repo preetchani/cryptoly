@@ -46,7 +46,7 @@ function App() {
         <div className="footer">
           <Typography.Title
             level={5}
-            style={{ textAlign: "center", color: "white" }}
+            style={{ textAlign: "center", color: "back" }}
           >
             Cryptoly <br />
             All rights reserved

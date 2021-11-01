@@ -21,8 +21,8 @@ const ChartComponent = ({coinHistory, currentPrice, coinName}) => {
           label: 'Price In USD',
           data: coinPrice,
           fill: false,
-          backgroundColor: '#0071bd',
-          borderColor: '#0071bd',
+          backgroundColor: '#62dab4',
+          borderColor: '#62dab4',
         },
       ],
     };

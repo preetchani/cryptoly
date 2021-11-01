@@ -1,9 +1,10 @@
+@import 'antd/dist/antd.css';
 :root{
     --text-primary:#000;
-    --bgPrimary:#fff;
-   --bgSecondary: #F9F9F9;
-   --pink: #0071bd;
-   --light-blue: #e6f7ff;
+    --bgPrimary:#5DFDCB;
+   --bgSecondary: #5DFDCB;
+   --pink: black;
+   --light-blue: #ffffff;
    --border: #d9d9d9;
 }
 
@@ -14,9 +15,22 @@
 }
 
 a:hover{
-    color: var(--pink) !important;
+    color: white !important;
 }
 
+a{
+    color: black;
+    text-decoration: none;
+}
+
+h3,p{
+ color: black;
+}
+.ant-menu-root.ant-menu-vertical, .ant-menu-root.ant-menu-vertical-left, .ant-menu-root.ant-menu-vertical-right, .ant-menu-root.ant-menu-inline{
+    border: none;
+    background-color: #5DFDCB;
+    color: white;
+}
 .app{
     display: flex;
     overflow: hidden;
@@ -24,37 +38,37 @@ a:hover{
 
 .navbar{
     flex: 0.2;
-    background-color: rgb(0, 21, 41);
+    background-color: #5DFDCB;
 }
 
 .main{
     flex: 0.8;
     width: 100%;
-    
 }
+
 .routes{
     padding: 20px;
+    background-color: #F4FAFF;
 }
 .nav-container{
     position: fixed;
     left: 0;
-    margin: 10px;
     height: 100vh;
-    background-color: rgb(0, 21, 41);
+   
 }
 
 .logo-container{
-    background-color: #001529;
     display: flex;
     padding: 20px;
     align-items: center;
     width: 100%;
+    background-color: #5DFDCB;
 }
 .logo{
     margin:0 0 0 15px;
 }
 .logo a{
-   color: white;
+   color: rgb(19, 4, 4);
 }
 .menu-control-container{
     display: none !important;
@@ -71,8 +85,22 @@ a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #5DFDCB;
 }
 
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: black;
+    color: white;
+}
+
+.ant-menu-item-selected a, .ant-menu-item-selected a:hover {
+    color: #ffff;
+}
+.ant-menu-root.ant-menu-vertical, .ant-menu-root.ant-menu-vertical-left, .ant-menu-root.ant-menu-vertical-right, .ant-menu-root.ant-menu-inline {
+    border: none;
+    background-color: #5DFDCB;
+    color: black
+}
 @media screen and (max-width:1300px){
     .main{
         margin-left: 50px;
@@ -109,7 +137,7 @@ a:hover{
     }
 
     .nav-container{
-        height: 8vh;
+        height: 12vh;
         position:fixed;
         width: 100%;
         z-index: 100;
@@ -320,10 +348,10 @@ width: 70%;
     display: flex;
     justify-content: space-between;
     gap: 50px;
-    color: #0071bd;
+    color: #5DFDCB;
 }
 .chart-title{
-    color: #0071bd !important;
+    color: #050505 !important;
 }
 .price-container{
     display: flex !important;
@@ -346,6 +374,7 @@ width: 70%;
 }
 .show-more{
     margin-top: 0px !important;
+    color: #5DFDCB;
 }
 .exchange-image{
     margin: 0px 10px !important;
@@ -369,7 +398,7 @@ width: 70%;
 }
 
 .footer {
-    background-color: #001529;
+    background-color: #5DFDCB;
     display: flex;
     flex-direction: column;
     padding: 20px;

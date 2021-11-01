@@ -8,7 +8,7 @@ import {
   FundOutlined,
   MenuOutlined,
 } from "@ant-design/icons";
-import icon from "../images/cryptocurrency.png";
+import icon from "../images/cryptoLogo.png";
 const Navbar = () => {
   
   const [activeMenu,setActiveMenu] = useState(true);
@@ -43,7 +43,7 @@ const Navbar = () => {
       </div>
       {/* -------------Side Menu Items --------------------*/}
       {activeMenu && (
-         <Menu theme="dark">
+         <Menu theme="light">
          <Menu.Item key="home" icon={<HomeOutlined />}>
            <Link to="/">Home</Link>
          </Menu.Item>
